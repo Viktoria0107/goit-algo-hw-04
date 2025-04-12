@@ -8,14 +8,17 @@ def add_contact(args, contacts):
     contacts[name] = phone
     return "Contact added."
 
-# def change_contact(args, contacts):
-#     name, phone = args
-#     contacts[name] = phone
-#     return "Change contact"
+def change_contact(args, contacts):
+    name, phone = args
+    contacts[name] = phone
+    return "Change contact"
 
 def show_phone(args, contacts):
     name = args[0]
     return f"{contacts[name]}"
+
+def all_contact(contacts):
+    return f"{contacts}"
 
    
 def main():
@@ -35,8 +38,10 @@ def main():
             print(add_contact(args, contacts))
         elif command == "phone":
             print(show_phone(args, contacts))
-        # elif command == "change":
-        #     print(change_contact(args, contacts))
+        elif command == "change":
+            print(change_contact(args, contacts))
+        elif command == "all":
+            print(all_contact(contacts))
        
         else:
             print("Invalid command.")
